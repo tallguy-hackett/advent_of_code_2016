@@ -36,7 +36,19 @@ defmodule BlocksAwayTest do
     assert blocks_away("L3", {0, 0, :west}) == {0, -3, :south}
   end
 
-  test "['L1', 'R1']returned when passing 'L1, R1'" do
-    assert blocks_away("L1, R1") == ["L1", "R1"]
+  test "2 returned when passing 'L1, R1'" do
+    assert blocks_away("L1, R1") == 2
+  end
+
+  test "5 returned when passing 'R2, L3'" do
+    assert blocks_away("R2, L3") == 5
+  end
+
+  test "2 returned when passing 'R2, R2, R2'" do
+    assert blocks_away("R2, R2, R2") == 2
+  end
+
+  test "12 returned when passing 'R5, L5, R5, R3'" do
+    assert blocks_away("R5, L5, R5, R3") == 12
   end
 end
